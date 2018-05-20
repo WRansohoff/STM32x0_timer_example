@@ -67,8 +67,6 @@ int main(void) {
   #endif
   // Enable the TIM2 clock.
   RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
-  // Enable the SYSCFG clock for hardware interrupts.
-  //RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
 
   // Setup GPIO pin B3 as push-pull output, no pupdr.
   GPIOB->MODER   &= ~(3 << (LED_PIN*2));
@@ -83,6 +81,8 @@ int main(void) {
   // Start the timer.
   start_timer(TIM2, 1000);
 
+  // The main loop is empty; all of the program logic
+  // happens in the timer interrupt.
   while (1) {
   }
 
