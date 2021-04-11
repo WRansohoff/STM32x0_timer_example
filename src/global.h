@@ -14,6 +14,6 @@
 // Global variables and defines.
 #define LED_PIN (3)
 // (Core system clock speed; initial value depends on the chip.)
-volatile uint32_t core_clock_hz;
+extern volatile uint32_t core_clock_hz;
 
-#endif
+#endif // _VVC_GLOBAL_H

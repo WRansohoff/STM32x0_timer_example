@@ -4,6 +4,8 @@
  * Main program.
  */
 int main(void) {
+  volatile uint32_t core_clock_hz;
+
   // Initial clock setup.
   #ifdef VVC_F0
     // Reset the Flash 'Access Control Register', and
