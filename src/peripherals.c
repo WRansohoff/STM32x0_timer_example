@@ -8,6 +8,8 @@
  * It should trigger every N milliseconds.
  */
 void start_timer(TIM_TypeDef *TIMx, uint16_t ms) {
+  volatile uint32_t core_clock_hz;
+
   // Start by making sure the timer's 'counter' is off.
   TIMx->CR1 &= ~(TIM_CR1_CEN);
   // Next, reset the peripheral. (This is where a HAL can help)
